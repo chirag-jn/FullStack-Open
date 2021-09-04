@@ -5,15 +5,22 @@ import React, {useState} from 'react';
 function App() {
   const [ counter, setCounter ] = useState(0)
 
-  setTimeout(
-    () => setCounter(counter+1),
-    1000
-  )
+  // setTimeout(
+  //   () => setCounter(counter+1),
+  //   1000
+  // )
+
+  const handleClick = () => {
+    setCounter(counter+1)
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <div>{counter}</div>
+        <button onClick={handleClick}>
+          Increment
+        </button>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <a
           className="App-link"
