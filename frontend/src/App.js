@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>{counter}</div>
-        <button onClick={handleClick}>
+        <button onClick = {() => setCounter(counter+1)}>
           Increment
         </button>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
