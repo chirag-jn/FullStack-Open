@@ -4,21 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-let counter = 0
-
-const refresh = () => {
-    ReactDOM.render(
+ReactDOM.render(
     <React.StrictMode>
-    <App counter={counter} />
+    <App />
     </React.StrictMode>,
-    document.getElementById('root'))
-  }
-
-
-setInterval(() => {
-    refresh()
-    counter += 1
-}, 1000)
+document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

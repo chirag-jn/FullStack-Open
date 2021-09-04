@@ -1,29 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 
-function Hello(props) {
+function App() {
+  const [ counter, setCounter ] = useState(0)
 
-    const Hello2 = (props) => {
-        return props.name + ' how are you?'
-    }
+  setTimeout(
+    () => setCounter(counter+1),
+    1000
+  )
 
-    const Hello3 = (props) => props.name + ' how are you?'
-
-    return (
-        <div>
-            <p>Hello {Hello3(props)}</p>
-        </div>
-    )
-}
-
-function App(props) {
-  const {counter} = props 
   return (
     <div className="App">
       <header className="App-header">
         <div>{counter}</div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Hello name="there"/>
         <a
           className="App-link"
           href="https://reactjs.org"
