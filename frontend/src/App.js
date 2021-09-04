@@ -1,10 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Hello() {
+function Hello(props) {
     return (
         <div>
-            <p>Hello World</p>
+            <p>Hello {props.name}</p>
+        </div>
+    )
+}
+
+const Hello2 = (props) => {
+    return (
+        <div>
+            <p>Hello {props.name}</p>
         </div>
     )
 }
@@ -13,8 +21,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Hello />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <Hello name="there"/>
+        <Hello2 name="react"/>
         <a
           className="App-link"
           href="https://reactjs.org"
