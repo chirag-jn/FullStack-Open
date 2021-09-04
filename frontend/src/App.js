@@ -2,34 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
 
+const Display = (props) => {
+  return (
+    <div>
+      {props.counter}
+    </div>
+  )
+}
+
+const Button = (props) => {
+  return (
+    <button onClick={props.onclick}>
+    {props.text}
+    </button>
+  )
+}
+
 function App() {
   const [ counter, setCounter ] = useState(0)
 
-  // setTimeout(
-  //   () => setCounter(counter+1),
-  //   1000
-  // )
-
-  const handleClick = () => {
-    setCounter(counter+1)
-  }
+  const increaseByOne = () => setCounter(counter+1)
+  const setToZero = () => setCounter(0)
 
   return (
     <div className="App">
       <header className="App-header">
-        <div>{counter}</div>
-        <button onClick = {() => setCounter(counter+1)}>
-          Increment
-        </button>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Display counter={counter} />
+        <Button text="Plus" onclick={increaseByOne} />
+        <Button text="Zero" onclick={setToZero} />
       </header>
     </div>
   );
