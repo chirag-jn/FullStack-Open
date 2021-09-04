@@ -16,10 +16,12 @@ function Hello(props) {
     )
 }
 
-function App() {
+function App(props) {
+  const {counter} = props 
   return (
     <div className="App">
       <header className="App-header">
+        <div>{counter}</div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Hello name="there"/>
         <a
