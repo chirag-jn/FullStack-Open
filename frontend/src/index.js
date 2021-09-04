@@ -14,9 +14,11 @@ const refresh = () => {
     document.getElementById('root'))
   }
 
-refresh()
-counter += 1
-refresh()
+
+setInterval(() => {
+    refresh()
+    counter += 1
+}, 1000)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
