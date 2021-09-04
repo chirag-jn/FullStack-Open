@@ -2,18 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
 
-const Display = (props) => {
-  return (
-    <div>
-      {props.counter}
-    </div>
-  )
-}
+const Display = ({counter}) => <div>{counter}</div>
 
-const Button = (props) => {
+const Button = ({onClick, text}) => {
   return (
-    <button onClick={props.onclick}>
-    {props.text}
+    <button onClick={onClick}>
+    {text}
     </button>
   )
 }
@@ -28,8 +22,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Display counter={counter} />
-        <Button text="Plus" onclick={increaseByOne} />
-        <Button text="Zero" onclick={setToZero} />
+        <Button text="Plus" onClick={increaseByOne} />
+        <Button text="Zero" onClick={setToZero} />
       </header>
     </div>
   );
