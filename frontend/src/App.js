@@ -7,9 +7,11 @@ function Hello(props) {
         return props.name + ' how are you?'
     }
 
+    const Hello3 = (props) => props.name + ' how are you?'
+
     return (
         <div>
-            <p>Hello {Hello2(props)}</p>
+            <p>Hello {Hello3(props)}</p>
         </div>
     )
 }
