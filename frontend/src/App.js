@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
 
@@ -13,8 +12,6 @@ const Button = ({onClick, text}) => {
 }
 
 function App() {
-  // const [left, setLeft] = useState(0)
-  // const [right, setRight] = useState(0)
 
   const [clicks, setClicks] = useState({
     left: 0, right: 0
@@ -22,15 +19,15 @@ function App() {
 
   const handleLeftClick = () => {
     const newClicks = {
-      left: clicks.left + 1,
-      right: clicks.right
+      ...clicks,
+      left: clicks.left + 1
     }
     setClicks(newClicks)
   }
 
   const handleRightClick = () => {
     const newClicks = {
-      left: clicks.left,
+      ...clicks,
       right: clicks.right + 1
     }
     setClicks(newClicks)
