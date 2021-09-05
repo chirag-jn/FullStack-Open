@@ -13,17 +13,20 @@ const Button = ({onClick, text}) => {
 }
 
 function App() {
-  const [ counter, setCounter ] = useState(0)
-
-  const increaseByOne = () => setCounter(counter+1)
-  const setToZero = () => setCounter(0)
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
 
   return (
     <div className="App">
       <header className="App-header">
-        <Display counter={counter} />
-        <Button text="Plus" onClick={increaseByOne} />
-        <Button text="Zero" onClick={setToZero} />
+        <div>
+          <Display counter={left}/>
+          <Button onClick={() => setLeft(left+1)} text="Left" />
+        </div>
+        <div>
+          <Display counter={right}/>
+          <Button onClick={() => setRight(right+1)} text="Right" />
+        </div>
       </header>
     </div>
   );
